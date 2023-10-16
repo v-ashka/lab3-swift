@@ -8,55 +8,52 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["S", "A", "B", "D", "E"]
+    let emojis = ["😄", "😅", "🤒", "😱", "😡", "🤩", "👽", "👽"]
     
-    @State var cardCount = 4
+    @State var cardCount = 2
+    var isEnabled: Bool = true
     var body: some View {
         VStack{
             ScrollView{
-                cards
-            }
+                cardDisplay(elems: emojis, itemsCount: cardCount, minWidthSize: 120)
+            }	
                 cardsCountAdjuster
             
         }.padding()
         
     }
     
-    var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 120 ))]){
-            ForEach(0..<cardCount, id: \.self){
+    
+    func cardDisplay(elems: Array<String>, itemsCount: Int, minWidthSize: CGFloat) -> some View{
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: minWidthSize ))]){
+            ForEach(0..<itemsCount, id: \.self){
                 index in
-                CardView(content: emojis[index])
-                    .aspectRatio(2/3, contentMode: .fit)
+                CardView(content: elems[index])
             }
         }
-        .foregroundColor(.orange)
+        .foregroundColor(.blue)
         
     }
     
     var cardsCountAdjuster: some View {
         HStack{
-            cardAdder
+            adjustCardNumber(by: -2, symbol: "minus.rectangle").disabled(cardCount - 2 < 2)
             Spacer()
-            cardRemover
-        }
-    }
-    
-    var cardAdder: some View{
-        Button("Add card"){
-            if cardCount < emojis.count{
-                cardCount+=1
-            }
-        }
-    }
-    
-    var cardRemover: some View {
-        Button("Remove card"){
-            if cardCount > 1{
-                cardCount-=1
-            }
-        }
+            adjustCardNumber(by: +2, symbol: "plus.rectangle").disabled(cardCount + 2 > emojis.count)
 
+        }
+    }
+    
+    func adjustCardNumber(by offset: Int, symbol: String) -> some View {
+        Button(action: {
+            let newCount = cardCount + offset
+            if(newCount >= 2 && newCount <= emojis.count){
+                cardCount = newCount
+                
+            }
+        }, label: {
+            Label("", systemImage: symbol)
+        }).font(.largeTitle)
     }
     
 }
