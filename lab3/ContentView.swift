@@ -23,11 +23,12 @@ struct ContentView: View {
                 print(viewModel.cards)
             }
 //                cardsCountAdjuster
+
             
         }.padding()
         
     }
-    
+
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 85 ), spacing: 0)], spacing: 0){
             ForEach(viewModel.cards){
@@ -39,9 +40,10 @@ struct ContentView: View {
                     .onTapGesture {
                         viewModel.choose(card)
                     }
+
             }
         }
-        .foregroundColor(.orange)
+        .foregroundColor(.blue)
         
     }
 //
@@ -70,6 +72,7 @@ struct ContentView: View {
 //
 //    }
 //
+
 }
 
 

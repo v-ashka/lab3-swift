@@ -39,7 +39,7 @@ struct CardView: View {
         }
 //        .onTapGesture(perform: {
 //            isFaceUp.toggle()
-//        })
+//       })
         .padding(2.5)
     }
 }
