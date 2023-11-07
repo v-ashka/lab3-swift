@@ -8,60 +8,77 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["😄", "😅", "🤒", "😱", "😡", "🤩", "👽", "👽"]
+    @ObservedObject var viewModel: MyMemoGame
+//    let emojis = ["S", "A", "B", "D", "E"]
     
-    @State var cardCount = 2
-    var isEnabled: Bool = true
+//    @State var cardCount = 4
     var body: some View {
         VStack{
             ScrollView{
-                cardDisplay(elems: emojis, itemsCount: cardCount, minWidthSize: 120)
-            }	
-                cardsCountAdjuster
+                cards
+                    .animation(.default, value: viewModel.cards)
+            }
+            Button("WTMIESZAJ"){
+                viewModel.shuffle()
+                print(viewModel.cards)
+            }
+//                cardsCountAdjuster
+
             
         }.padding()
         
     }
-    
-    
-    func cardDisplay(elems: Array<String>, itemsCount: Int, minWidthSize: CGFloat) -> some View{
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: minWidthSize ))]){
-            ForEach(0..<itemsCount, id: \.self){
-                index in
-                CardView(content: elems[index])
+
+    var cards: some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 85 ), spacing: 0)], spacing: 0){
+            ForEach(viewModel.cards){
+                card in
+                CardView(
+                    card)
+                    .aspectRatio(2/3, contentMode: .fit)
+                    .padding(4)
+                    .onTapGesture {
+                        viewModel.choose(card)
+                    }
+
             }
         }
         .foregroundColor(.blue)
         
     }
-    
-    var cardsCountAdjuster: some View {
-        HStack{
-            adjustCardNumber(by: -2, symbol: "minus.rectangle").disabled(cardCount - 2 < 2)
-            Spacer()
-            adjustCardNumber(by: +2, symbol: "plus.rectangle").disabled(cardCount + 2 > emojis.count)
+//
+//    var cardsCountAdjuster: some View {
+//        HStack{
+//            cardAdder
+//            Spacer()
+//            cardRemover
+//        }
+//    }
+//
+//    var cardAdder: some View{
+//        Button("Add card"){
+//            if cardCount < emojis.count{
+//                cardCount+=1
+//            }
+//        }
+//    }
+//
+//    var cardRemover: some View {
+//        Button("Remove card"){
+//            if cardCount > 1{
+//                cardCount-=1
+//            }
+//        }
+//
+//    }
+//
 
-        }
-    }
-    
-    func adjustCardNumber(by offset: Int, symbol: String) -> some View {
-        Button(action: {
-            let newCount = cardCount + offset
-            if(newCount >= 2 && newCount <= emojis.count){
-                cardCount = newCount
-                
-            }
-        }, label: {
-            Label("", systemImage: symbol)
-        }).font(.largeTitle)
-    }
-    
 }
 
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: MyMemoGame())
     }
 }
