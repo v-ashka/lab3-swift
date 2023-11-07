@@ -8,63 +8,74 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["S", "A", "B", "D", "E"]
+    @ObservedObject var viewModel: MyMemoGame
+//    let emojis = ["S", "A", "B", "D", "E"]
     
-    @State var cardCount = 4
+//    @State var cardCount = 4
     var body: some View {
         VStack{
             ScrollView{
                 cards
+                    .animation(.default, value: viewModel.cards)
             }
-                cardsCountAdjuster
+            Button("WTMIESZAJ"){
+                viewModel.shuffle()
+                print(viewModel.cards)
+            }
+//                cardsCountAdjuster
             
         }.padding()
         
     }
     
     var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 120 ))]){
-            ForEach(0..<cardCount, id: \.self){
-                index in
-                CardView(content: emojis[index])
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 85 ), spacing: 0)], spacing: 0){
+            ForEach(viewModel.cards){
+                card in
+                CardView(
+                    card)
                     .aspectRatio(2/3, contentMode: .fit)
+                    .padding(4)
+                    .onTapGesture {
+                        viewModel.choose(card)
+                    }
             }
         }
         .foregroundColor(.orange)
         
     }
-    
-    var cardsCountAdjuster: some View {
-        HStack{
-            cardAdder
-            Spacer()
-            cardRemover
-        }
-    }
-    
-    var cardAdder: some View{
-        Button("Add card"){
-            if cardCount < emojis.count{
-                cardCount+=1
-            }
-        }
-    }
-    
-    var cardRemover: some View {
-        Button("Remove card"){
-            if cardCount > 1{
-                cardCount-=1
-            }
-        }
-
-    }
-    
+//
+//    var cardsCountAdjuster: some View {
+//        HStack{
+//            cardAdder
+//            Spacer()
+//            cardRemover
+//        }
+//    }
+//
+//    var cardAdder: some View{
+//        Button("Add card"){
+//            if cardCount < emojis.count{
+//                cardCount+=1
+//            }
+//        }
+//    }
+//
+//    var cardRemover: some View {
+//        Button("Remove card"){
+//            if cardCount > 1{
+//                cardCount-=1
+//            }
+//        }
+//
+//    }
+//
 }
 
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: MyMemoGame())
     }
 }

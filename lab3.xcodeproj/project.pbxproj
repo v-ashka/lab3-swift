@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E23E7902AFA62060014F894 /* MemoGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23E78F2AFA62060014F894 /* MemoGame.swift */; };
+		7E23E7952AFA62E80014F894 /* MyMemoGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23E7942AFA62E80014F894 /* MyMemoGame.swift */; };
 		7EB0CC2C2ADD9BC40061A8FD /* lab3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0CC2B2ADD9BC40061A8FD /* lab3App.swift */; };
 		7EB0CC2E2ADD9BC40061A8FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0CC2D2ADD9BC40061A8FD /* ContentView.swift */; };
 		7EB0CC302ADD9BC50061A8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB0CC2F2ADD9BC50061A8FD /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E23E78F2AFA62060014F894 /* MemoGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoGame.swift; sourceTree = "<group>"; };
+		7E23E7942AFA62E80014F894 /* MyMemoGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMemoGame.swift; sourceTree = "<group>"; };
 		7EB0CC282ADD9BC40061A8FD /* lab3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB0CC2B2ADD9BC40061A8FD /* lab3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab3App.swift; sourceTree = "<group>"; };
 		7EB0CC2D2ADD9BC40061A8FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			children = (
 				7EB0CC2B2ADD9BC40061A8FD /* lab3App.swift */,
 				7EB0CC2D2ADD9BC40061A8FD /* ContentView.swift */,
+				7E23E78F2AFA62060014F894 /* MemoGame.swift */,
+				7E23E7942AFA62E80014F894 /* MyMemoGame.swift */,
 				7EB0CC2F2ADD9BC50061A8FD /* Assets.xcassets */,
 				7EB0CC342ADD9BC50061A8FD /* Info.plist */,
 				7EB0CC312ADD9BC50061A8FD /* Preview Content */,
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB0CC2E2ADD9BC40061A8FD /* ContentView.swift in Sources */,
+				7E23E7952AFA62E80014F894 /* MyMemoGame.swift in Sources */,
+				7E23E7902AFA62060014F894 /* MemoGame.swift in Sources */,
 				7EB0CC5A2ADD9CE10061A8FD /* CardView.swift in Sources */,
 				7EB0CC2C2ADD9BC40061A8FD /* lab3App.swift in Sources */,
 			);
