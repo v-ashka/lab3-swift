@@ -20,8 +20,9 @@ struct ContentView: View {
             }
             Button("WTMIESZAJ"){
                 viewModel.shuffle()
-                print(viewModel.cards)
+//                print(viewModel.cards)
             }
+            ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 1", ownColor: Color.blue)
 //                cardsCountAdjuster
 
             
@@ -43,7 +44,7 @@ struct ContentView: View {
 
             }
         }
-        .foregroundColor(.blue)
+        .foregroundColor(viewModel.themeColor)
         
     }
 //

@@ -38,12 +38,18 @@ class MyMemoGame: ObservableObject{
     
     @Published private var model = MyMemoGame.createMemoGame()
     
+    var themeColor = Color.orange
+    
     var cards: Array<MemoGame<String>.Card>{
         return model.cards
     }
     
     func choose(_ card: MemoGame<String>.Card){
         model.choose(card)
+    }
+    
+    func changeApplicationTheme(color: Color){
+        themeColor = color
     }
     
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7E23E7902AFA62060014F894 /* MemoGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23E78F2AFA62060014F894 /* MemoGame.swift */; };
 		7E23E7952AFA62E80014F894 /* MyMemoGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23E7942AFA62E80014F894 /* MyMemoGame.swift */; };
+		7E23E79F2AFA806A0014F894 /* enumWyklad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23E79E2AFA806A0014F894 /* enumWyklad.swift */; };
+		7E2508282B010392008BEDD5 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2508272B010392008BEDD5 /* ThemeButton.swift */; };
 		7EB0CC2C2ADD9BC40061A8FD /* lab3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0CC2B2ADD9BC40061A8FD /* lab3App.swift */; };
 		7EB0CC2E2ADD9BC40061A8FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0CC2D2ADD9BC40061A8FD /* ContentView.swift */; };
 		7EB0CC302ADD9BC50061A8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB0CC2F2ADD9BC50061A8FD /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		7E23E78F2AFA62060014F894 /* MemoGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoGame.swift; sourceTree = "<group>"; };
 		7E23E7942AFA62E80014F894 /* MyMemoGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMemoGame.swift; sourceTree = "<group>"; };
+		7E23E79E2AFA806A0014F894 /* enumWyklad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumWyklad.swift; sourceTree = "<group>"; };
+		7E2508272B010392008BEDD5 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		7EB0CC282ADD9BC40061A8FD /* lab3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB0CC2B2ADD9BC40061A8FD /* lab3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab3App.swift; sourceTree = "<group>"; };
 		7EB0CC2D2ADD9BC40061A8FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		7EB0CC1F2ADD9BC40061A8FD = {
 			isa = PBXGroup;
 			children = (
+				7E23E79E2AFA806A0014F894 /* enumWyklad.swift */,
 				7EB0CC2A2ADD9BC40061A8FD /* lab3 */,
 				7EB0CC3C2ADD9BC50061A8FD /* lab3Tests */,
 				7EB0CC472ADD9BC50061A8FD /* lab3UITests */,
@@ -109,6 +114,7 @@
 				7EB0CC342ADD9BC50061A8FD /* Info.plist */,
 				7EB0CC312ADD9BC50061A8FD /* Preview Content */,
 				7EB0CC592ADD9CE10061A8FD /* CardView.swift */,
+				7E2508272B010392008BEDD5 /* ThemeButton.swift */,
 			);
 			path = lab3;
 			sourceTree = "<group>";
@@ -272,6 +278,8 @@
 				7E23E7952AFA62E80014F894 /* MyMemoGame.swift in Sources */,
 				7E23E7902AFA62060014F894 /* MemoGame.swift in Sources */,
 				7EB0CC5A2ADD9CE10061A8FD /* CardView.swift in Sources */,
+				7E23E79F2AFA806A0014F894 /* enumWyklad.swift in Sources */,
+				7E2508282B010392008BEDD5 /* ThemeButton.swift in Sources */,
 				7EB0CC2C2ADD9BC40061A8FD /* lab3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
