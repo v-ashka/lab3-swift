@@ -22,7 +22,15 @@ struct ContentView: View {
                 viewModel.shuffle()
 //                print(viewModel.cards)
             }
-            ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 1", ownColor: Color.blue)
+            Spacer()
+            HStack{
+                ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 1", ownColor: Color.blue)
+                Spacer()
+                ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 2", ownColor: Color.green)
+                Spacer()
+                ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 3", ownColor: Color.red)
+            }
+            
 //                cardsCountAdjuster
 
             
