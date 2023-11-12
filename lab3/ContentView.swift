@@ -24,11 +24,12 @@ struct ContentView: View {
             }
             ThemeButton(viewModel: viewModel, imageName: "pencil", content: "Motyw 1", ownColor: Color.blue)
 //                cardsCountAdjuster
+
             
         }.padding()
         
     }
-    
+
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 85 ), spacing: 0)], spacing: 0){
             ForEach(viewModel.cards){
@@ -40,6 +41,7 @@ struct ContentView: View {
                     .onTapGesture {
                         viewModel.choose(card)
                     }
+
             }
         }
         .foregroundColor(viewModel.themeColor)
@@ -71,6 +73,7 @@ struct ContentView: View {
 //
 //    }
 //
+
 }
 
 

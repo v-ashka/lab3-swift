@@ -36,7 +36,7 @@ struct CardView: View {
         .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
 //        .onTapGesture(perform: {
 //            isFaceUp.toggle()
-//        })
+//       })
         .padding(2.5)
     }
 }
